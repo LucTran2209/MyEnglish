@@ -1,0 +1,1 @@
+﻿global using MyEnglish.Domain.Entities;
