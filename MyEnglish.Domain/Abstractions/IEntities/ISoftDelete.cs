@@ -2,6 +2,6 @@
 {
     public interface ISoftDelete
     {
-        public bool IsDeleted { get; set; }
+        public bool IsSoftDeleted { get; set; }
     }
 }

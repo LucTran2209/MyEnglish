@@ -7,7 +7,7 @@ namespace MyEnglish.Domain.Abstractions.IEntities
         {
             Id = Guid.NewGuid();
             CreatedDate = DateTimeOffset.UtcNow;
-            IsDeleted = false;
+            IsSoftDeleted = false;
         }
 
         public Guid Id { get ; set ; }
@@ -15,6 +15,6 @@ namespace MyEnglish.Domain.Abstractions.IEntities
         public Guid? ModifiedBy { get ; set ; }
         public DateTimeOffset CreatedDate { get ; set ; }
         public DateTimeOffset? LastModifiedDate { get ; set ; }
-        public bool IsDeleted { get ; set ; }
+        public bool IsSoftDeleted { get ; set ; }
     }
 }
