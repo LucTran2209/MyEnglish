@@ -1,8 +1,7 @@
-﻿namespace MyEnglish.Domain.Abstractions.Enums
+﻿namespace MyEnglish.Domain.Abstractions.Enums;
+
+public enum Genders
 {
-    enum  Genders
-    {
-        Male,
-        Female,
-    }
+    Male,
+    Female
 }

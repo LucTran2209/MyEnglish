@@ -1,50 +1,67 @@
 
-namespace MyEnglish.Api
+using FastEndpoints;
+using FastEndpoints.Swagger;
+using MyEnglish.Api.Middleware;
+using MyEnglish.Application.DependencyInjections;
+using MyEnglish.Infrastructure.DependencyInjections;
+using MyEnglish.Persistence.DependencyInjections;
+
+namespace MyEnglish.Api;
+
+public class Program
 {
-    public class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
+        var builder = WebApplication.CreateBuilder(args);
+
+        // Add layer services
+        builder.Services.AddApplicationServices();
+        builder.Services.AddInfrastructure(builder.Configuration);
+        builder.Services.AddPersistence(builder.Configuration);
+
+        // Add FastEndpoints
+        builder.Services.AddFastEndpoints();
+
+        // Add Swagger with FastEndpoints
+        builder.Services.SwaggerDocument(o =>
         {
-            var builder = WebApplication.CreateBuilder(args);
-
-            // Add services to the container.
-            builder.Services.AddAuthorization();
-
-            // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-           
-
-            var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+            o.DocumentSettings = s =>
             {
-               
-            }
-
-            app.UseHttpsRedirection();
-
-            app.UseAuthorization();
-
-            var summaries = new[]
-            {
-                "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+                s.Title = "MyEnglish API";
+                s.Version = "v1";
+                s.Description = "A comprehensive English learning platform API built with DDD, CQRS, and FastEndpoints";
             };
+            o.EnableJWTBearerAuth = true;
+        });
 
-            app.MapGet("/weatherforecast", (HttpContext httpContext) =>
-            {
-                var forecast = Enumerable.Range(1, 5).Select(index =>
-                    new WeatherForecast
-                    {
-                        Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                        TemperatureC = Random.Shared.Next(-20, 55),
-                        Summary = summaries[Random.Shared.Next(summaries.Length)]
-                    })
-                    .ToArray();
-                return forecast;
-            })
-            .WithName("GetWeatherForecast");
+        // Add MVC and Health Checks
+        builder.Services.AddMvc();
+        builder.Services.AddHealthChecks();
 
-            app.Run();
+        var app = builder.Build();
+
+        // Configure the HTTP request pipeline
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwaggerGen();
         }
+
+        // Add global exception handling
+        app.UseMiddleware<GlobalExceptionMiddleware>();
+
+        app.UseHttpsRedirection();
+
+        // Add authentication and authorization
+        app.UseAuthentication();
+        app.UseAuthorization();
+
+        // Use FastEndpoints
+        app.UseFastEndpoints(c =>
+        {
+            c.Endpoints.RoutePrefix = "api";
+            c.Serializer.Options.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
+        });
+
+        app.Run();
     }
 }

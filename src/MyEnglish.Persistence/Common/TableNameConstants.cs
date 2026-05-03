@@ -1,7 +1,7 @@
-﻿namespace MyEnglish.Persistence.Common
+﻿namespace MyEnglish.Persistence.Common;
+
+public static class TableNameConstants
 {
-    public class TableNameConstants
-    {
-        public const string Users = nameof(Users);
-    }
+    public const string Users = "Users";
+    public const string UserRefreshTokens = "UserRefreshTokens";
 }

@@ -8,6 +8,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="MediatR" />
+	  <PackageReference Include="FluentValidation" />
+	  <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+	  <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <ProjectReference Include="..\MyEnglish.Domain\MyEnglish.Domain.csproj" />
 	  <ProjectReference Include="..\MyEnglish.Infrastructure\MyEnglish.Infrastructure.csproj" />
 
