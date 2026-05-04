@@ -25,7 +25,7 @@ public sealed class LoginCommandHandler : IRequestHandler<LoginCommand, AuthResp
         // Find user by email
         var email = Email.Create(request.Email);
         var user = await _userRepository.GetByEmailAsync(email, cancellationToken);
-        
+
         if (user == null)
             throw new UnauthorizedAccessException("Invalid email or password.");
 
@@ -49,7 +49,7 @@ public sealed class LoginCommandHandler : IRequestHandler<LoginCommand, AuthResp
 
         // Map to response using manual mapping
         var userDto = user.ToDto();
-        
+
         return new AuthResponse(
             accessToken,
             refreshToken.Token,

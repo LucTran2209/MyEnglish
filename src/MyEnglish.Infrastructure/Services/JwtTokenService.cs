@@ -22,7 +22,7 @@ public sealed class JwtTokenService : IJwtTokenService
         _secretKey = _configuration["Jwt:SecretKey"] ?? throw new InvalidOperationException("JWT SecretKey not configured");
         _issuer = _configuration["Jwt:Issuer"] ?? throw new InvalidOperationException("JWT Issuer not configured");
         _audience = _configuration["Jwt:Audience"] ?? throw new InvalidOperationException("JWT Audience not configured");
-        
+
         var expirationMinutes = _configuration.GetValue<int>("Jwt:AccessTokenExpirationMinutes");
         _accessTokenExpiration = TimeSpan.FromMinutes(expirationMinutes > 0 ? expirationMinutes : 15);
     }

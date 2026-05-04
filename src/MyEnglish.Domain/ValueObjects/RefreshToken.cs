@@ -19,10 +19,10 @@ public sealed record RefreshToken
         var randomBytes = new byte[32];
         using var rng = RandomNumberGenerator.Create();
         rng.GetBytes(randomBytes);
-        
+
         var token = Convert.ToBase64String(randomBytes);
         var expiresAt = DateTime.UtcNow.AddDays(expirationDays);
-        
+
         return new RefreshToken(token, expiresAt);
     }
 

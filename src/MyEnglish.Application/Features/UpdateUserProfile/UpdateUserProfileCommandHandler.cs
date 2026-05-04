@@ -17,7 +17,7 @@ public sealed class UpdateUserProfileCommandHandler : IRequestHandler<UpdateUser
     public async Task<UserDto> Handle(UpdateUserProfileCommand request, CancellationToken cancellationToken)
     {
         var user = await _userRepository.GetByIdAsync(request.UserId, cancellationToken);
-        
+
         if (user == null)
             throw new InvalidOperationException("User not found.");
 

@@ -134,7 +134,7 @@ public class User : EntityAuditBase
     {
         LastLoginAt = DateTime.UtcNow;
         LastModifiedDate = DateTimeOffset.UtcNow;
-        
+
         _domainEvents.Add(new UserLoggedInEvent(Id, Email, LastLoginAt.Value));
     }
 
@@ -149,7 +149,7 @@ public class User : EntityAuditBase
 
         var userRefreshToken = UserRefreshToken.Create(Id, refreshToken);
         RefreshTokens.Add(userRefreshToken);
-        
+
         return userRefreshToken;
     }
 

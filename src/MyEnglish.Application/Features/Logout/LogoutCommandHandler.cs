@@ -15,7 +15,7 @@ public sealed class LogoutCommandHandler : IRequestHandler<LogoutCommand>
     public async Task Handle(LogoutCommand request, CancellationToken cancellationToken)
     {
         var user = await _userRepository.GetByIdAsync(request.UserId, cancellationToken);
-        
+
         if (user == null)
             return; // User not found, nothing to do
 

@@ -21,7 +21,7 @@ namespace MyEnglish.Persistence.Extensions
             {
                 context.Database.Migrate();
             }
-            
+
             var contributors = serviceScope.ServiceProvider.GetServices<IDataSeedContributor>();
 
             foreach (var contributor in contributors)

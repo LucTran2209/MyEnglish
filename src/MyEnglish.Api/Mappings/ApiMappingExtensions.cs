@@ -31,7 +31,7 @@ public static class ApiMappingExtensions
     public static RefreshTokenCommand ToCommand(this RefreshTokenRequest request)
     {
         return new RefreshTokenCommand(request.RefreshToken);
-    }   
+    }
 
     public static UpdateUserProfileCommand ToCommand(this UpdateUserProfileRequest request, Guid userId)
     {

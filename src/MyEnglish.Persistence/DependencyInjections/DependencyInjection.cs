@@ -29,7 +29,7 @@ public static class DependencyInjection
 
         //Seed Data
         //services.AddTransient<IDataSeedContributor, UsersDataSeedContributor>();
-        
+
         return services;
     }
 }

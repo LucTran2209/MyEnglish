@@ -24,7 +24,7 @@ public sealed class RefreshTokenCommandHandler : IRequestHandler<RefreshTokenCom
     {
         // Find user by refresh token
         var user = await _userRepository.GetByRefreshTokenAsync(request.RefreshToken, cancellationToken);
-        
+
         if (user == null)
             throw new UnauthorizedAccessException("Invalid refresh token.");
 
@@ -51,7 +51,7 @@ public sealed class RefreshTokenCommandHandler : IRequestHandler<RefreshTokenCom
 
         // Map to response using manual mapping
         var userDto = user.ToDto();
-        
+
         return new AuthResponse(
             accessToken,
             newRefreshToken.Token,

@@ -37,7 +37,7 @@ public class LogoutEndpoint : Endpoint<LogoutRequest>
 
         var command = new LogoutCommand(userId, req.RefreshToken);
         await _mediator.Send(command, ct);
-        
+
         await SendOkAsync(ct);
     }
 }

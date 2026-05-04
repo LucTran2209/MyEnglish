@@ -26,7 +26,7 @@ public sealed class RegisterCommandHandler : IRequestHandler<RegisterCommand, Au
         // Check if user already exists
         var email = Email.Create(request.Email);
         var userExists = await _userRepository.ExistsByEmailAsync(email, cancellationToken);
-        
+
         if (userExists)
             throw new InvalidOperationException("User with this email already exists.");
 
@@ -51,7 +51,7 @@ public sealed class RegisterCommandHandler : IRequestHandler<RegisterCommand, Au
 
         // Map to response using manual mapping
         var userDto = user.ToDto();
-        
+
         return new AuthResponse(
             accessToken,
             refreshToken.Token,
