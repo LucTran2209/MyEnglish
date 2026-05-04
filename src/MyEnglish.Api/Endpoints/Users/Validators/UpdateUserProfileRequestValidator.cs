@@ -1,6 +1,5 @@
 using FastEndpoints;
 using FluentValidation;
-using MyEnglish.Application.Features.UpdateUserProfile;
 
 namespace MyEnglish.Api.Endpoints.Users.Validators;
 

@@ -30,8 +30,11 @@ public class LoginEndpoint : Endpoint<LoginRequest, AuthResponse>
     public override async Task HandleAsync(LoginRequest req, CancellationToken ct)
     {
         var query = req.ToQuery();
+
         var command = query.ToCommand();
+
         var response = await _mediator.Send(command, ct);
+
         await SendOkAsync(response, ct);
     }
 }

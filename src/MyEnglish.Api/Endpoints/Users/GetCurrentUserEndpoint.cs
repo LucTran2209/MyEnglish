@@ -5,12 +5,7 @@ using MyEnglish.Application.Features.GetUserById;
 
 namespace MyEnglish.Api.Endpoints.Users;
 
-public class GetCurrentUserRequest
-{
-    // Empty request for GET endpoint
-}
-
-public class GetCurrentUserEndpoint : Endpoint<GetCurrentUserRequest, UserDto>
+public class GetCurrentUserEndpoint : Endpoint<EmptyRequest, UserDto>
 {
     private readonly IMediator _mediator;
 
@@ -30,7 +25,7 @@ public class GetCurrentUserEndpoint : Endpoint<GetCurrentUserRequest, UserDto>
         });
     }
 
-    public override async Task HandleAsync(GetCurrentUserRequest req, CancellationToken ct)
+    public override async Task HandleAsync(EmptyRequest req, CancellationToken ct)
     {
         var userIdClaim = User.FindFirst("user_id")?.Value;
 
