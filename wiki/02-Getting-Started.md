@@ -24,7 +24,7 @@ cd MyEnglish
 
 ### 2. Configure Database Connection
 
-Update the connection string in `src/MyEnglish.Api/appsettings.json`:
+Update the connection string in `server/MyEnglish.Api/appsettings.json`:
 
 ```json
 {
@@ -43,7 +43,7 @@ Update the connection string in `src/MyEnglish.Api/appsettings.json`:
 
 ### 3. Configure JWT Settings
 
-Update JWT settings in `src/MyEnglish.Api/appsettings.json`:
+Update JWT settings in `server/MyEnglish.Api/appsettings.json`:
 
 ```json
 {
@@ -67,14 +67,14 @@ dotnet restore
 ### 5. Apply Database Migrations
 
 ```bash
-cd src/MyEnglish.Persistence
+cd server/MyEnglish.Persistence
 dotnet ef database update --startup-project ../MyEnglish.Api
 ```
 
 Or from the solution root:
 
 ```bash
-dotnet ef database update --project src/MyEnglish.Persistence --startup-project src/MyEnglish.Api
+dotnet ef database update --project server/MyEnglish.Persistence --startup-project server/MyEnglish.Api
 ```
 
 ### 6. Build the Solution
@@ -86,7 +86,7 @@ dotnet build
 ### 7. Run the Application
 
 ```bash
-cd src/MyEnglish.Api
+cd server/MyEnglish.Api
 dotnet run
 ```
 
@@ -250,7 +250,7 @@ dotnet build
 **Problem**: Port 5000 or 7001 is already in use
 
 **Solution**:
-Update `src/MyEnglish.Api/Properties/launchSettings.json`:
+Update `server/MyEnglish.Api/Properties/launchSettings.json`:
 
 ```json
 {

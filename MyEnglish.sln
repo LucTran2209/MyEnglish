@@ -1,19 +1,19 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36429.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "server", "server", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEnglish.Api", "src\MyEnglish.Api\MyEnglish.Api.csproj", "{9462AB0C-C05E-8F3E-FF65-60C028011EDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEnglish.Api", "server\MyEnglish.Api\MyEnglish.Api.csproj", "{9462AB0C-C05E-8F3E-FF65-60C028011EDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEnglish.Domain", "src\MyEnglish.Domain\MyEnglish.Domain.csproj", "{2EF15DC4-DFC8-4CDB-9FEE-1CCC809DCFBC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEnglish.Domain", "server\MyEnglish.Domain\MyEnglish.Domain.csproj", "{2EF15DC4-DFC8-4CDB-9FEE-1CCC809DCFBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEnglish.Infrastructure", "src\MyEnglish.Infrastructure\MyEnglish.Infrastructure.csproj", "{D623A1EC-68A8-4353-B0EB-710D23146539}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEnglish.Infrastructure", "server\MyEnglish.Infrastructure\MyEnglish.Infrastructure.csproj", "{D623A1EC-68A8-4353-B0EB-710D23146539}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEnglish.Persistence", "src\MyEnglish.Persistence\MyEnglish.Persistence.csproj", "{A6B4A132-B98E-4504-97DD-1BC5CC2A4174}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEnglish.Persistence", "server\MyEnglish.Persistence\MyEnglish.Persistence.csproj", "{A6B4A132-B98E-4504-97DD-1BC5CC2A4174}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEnglish.Application", "src\MyEnglish.Application\MyEnglish.Application.csproj", "{CF14423F-DB05-46A7-9D46-9237CCAD1DEE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEnglish.Application", "server\MyEnglish.Application\MyEnglish.Application.csproj", "{CF14423F-DB05-46A7-9D46-9237CCAD1DEE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution items", "solution items", "{99F487B2-101C-4D7A-B21A-CBA3F0025961}"
 	ProjectSection(SolutionItems) = preProject

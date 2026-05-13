@@ -74,7 +74,7 @@ Logs are written to the console in real-time for immediate feedback during devel
 
 Logs are persisted to text files for historical analysis and debugging.
 
-**Location**: `src/MyEnglish.Api/Logs/`
+**Location**: `server/MyEnglish.Api/Logs/`
 
 **File Naming**: `myenglish-YYYYMMDD.txt`
 - Example: `myenglish-20260504.txt`
@@ -194,7 +194,7 @@ Logs are automatically enriched with:
 
 1. **Console Output**: View real-time logs in the terminal/console
 2. **Visual Studio Output Window**: View logs in the Output window
-3. **Log Files**: Open files in `src/MyEnglish.Api/Logs/`
+3. **Log Files**: Open files in `server/MyEnglish.Api/Logs/`
 
 ### In Production
 

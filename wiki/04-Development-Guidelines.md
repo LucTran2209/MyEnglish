@@ -382,7 +382,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 - Use meaningful migration names
 
 ```bash
-dotnet ef migrations add AddUserRefreshTokens --project src/MyEnglish.Persistence --startup-project src/MyEnglish.Api
+dotnet ef migrations add AddUserRefreshTokens --project server/MyEnglish.Persistence --startup-project server/MyEnglish.Api
 ```
 
 ### Performance

@@ -190,10 +190,10 @@ builder.Property(u => u.Password)
 
 ```bash
 # From solution root
-dotnet ef migrations add MigrationName --project src/MyEnglish.Persistence --startup-project src/MyEnglish.Api
+dotnet ef migrations add MigrationName --project server/MyEnglish.Persistence --startup-project server/MyEnglish.Api
 
 # From Persistence project
-cd src/MyEnglish.Persistence
+cd server/MyEnglish.Persistence
 dotnet ef migrations add MigrationName --startup-project ../MyEnglish.Api
 ```
 
@@ -201,34 +201,34 @@ dotnet ef migrations add MigrationName --startup-project ../MyEnglish.Api
 
 ```bash
 # Update to latest migration
-dotnet ef database update --project src/MyEnglish.Persistence --startup-project src/MyEnglish.Api
+dotnet ef database update --project server/MyEnglish.Persistence --startup-project server/MyEnglish.Api
 
 # Update to specific migration
-dotnet ef database update MigrationName --project src/MyEnglish.Persistence --startup-project src/MyEnglish.Api
+dotnet ef database update MigrationName --project server/MyEnglish.Persistence --startup-project server/MyEnglish.Api
 
 # Rollback to previous migration
-dotnet ef database update PreviousMigrationName --project src/MyEnglish.Persistence --startup-project src/MyEnglish.Api
+dotnet ef database update PreviousMigrationName --project server/MyEnglish.Persistence --startup-project server/MyEnglish.Api
 ```
 
 ### Removing Migrations
 
 ```bash
 # Remove last migration (if not applied)
-dotnet ef migrations remove --project src/MyEnglish.Persistence --startup-project src/MyEnglish.Api
+dotnet ef migrations remove --project server/MyEnglish.Persistence --startup-project server/MyEnglish.Api
 ```
 
 ### Viewing Migrations
 
 ```bash
 # List all migrations
-dotnet ef migrations list --project src/MyEnglish.Persistence --startup-project src/MyEnglish.Api
+dotnet ef migrations list --project server/MyEnglish.Persistence --startup-project server/MyEnglish.Api
 ```
 
 ---
 
 ## Database Context
 
-**Location**: `src/MyEnglish.Persistence/DbContexts/SqlServerDbContext.cs`
+**Location**: `server/MyEnglish.Persistence/DbContexts/SqlServerDbContext.cs`
 
 ```csharp
 public class SqlServerDbContext : DbContext
